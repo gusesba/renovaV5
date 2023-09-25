@@ -1,3 +1,6 @@
+"use client";
+import Topnav from "@/components/Topnav";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt">
-      <body>{children}</body>
+      <body>
+        <Topnav />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
