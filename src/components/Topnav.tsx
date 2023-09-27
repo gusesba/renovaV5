@@ -12,7 +12,9 @@ export default function Topnav() {
     Recibos
     Excel 
     Insta*/}
-      <Image src="/logo.jpg" alt="Logo" width={180} height={60} />
+      <a href="/">
+        <Image src="/logo.jpg" alt="Logo" width={180} height={60} />
+      </a>
       <a href="/clientes">Clientes</a>
       <a href="/estoque">Estoque</a>
       <a href="/saidas">Saídas</a>

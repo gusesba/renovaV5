@@ -1,34 +1,29 @@
 import { Table } from "react-bootstrap";
-export default function Tabela() {
+
+export type Props = {
+  headers: { name: string; id: string }[];
+  dados: any[];
+};
+
+export default function Tabela({ headers, dados }: Props) {
   return (
     <div className="tabela-holder">
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            {headers.map((header) => (
+              <th key={header.id}>{header.name}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colSpan={2}>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {dados.map((dado, index) => (
+            <tr key={index}>
+              {headers.map((header) => (
+                <td key={header.id}>{dado[header.id]}</td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </Table>
     </div>
