@@ -105,3 +105,7 @@ Página de movimentação financeira:
   Excluir Movimentção - Exigir confirmação.
 
 Gerar excel
+
+Adicionar movimentação financeira e marcar como uso de crédito.
+
+Para calculos: valor comprado - movimentação financeira normal - movimentação financeira de crédito * x
