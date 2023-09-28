@@ -71,6 +71,7 @@ Tela de Vendas:
   Imprimir recibo
   Salvar carrinhos não finalizados no local storage
   Ao finalizar a compra, informar se foi feito o pagamento
+  Adicionar desconto automaticamente baseado no mês de entrada do produto
 
 Tela de entradas:
   Devolução de um produto.
@@ -103,6 +104,8 @@ Página de movimentação financeira:
   Movimentações financeiras
   Adicionar Movimentação
   Excluir Movimentção - Exigir confirmação.
+
+Página para devolução / doação
 
 Gerar excel
 
