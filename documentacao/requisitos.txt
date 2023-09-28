@@ -1,0 +1,107 @@
+CRUD clientes:
+  Create, Update: Verificar nome repetido.
+  Delete: Bloquear caso tenha algum produto ou compra atrelado.
+
+CRUD produtos:
+  Delete: Bloquear caso tenha alguma movimentação atrelada.
+  Delete: Mensagem de confirmação.
+
+CRUD movimentação de estoque:
+  Delete: Mensagem de confirmação.
+
+CRUD movimentação financeira:
+  Delete: Pedir Confirmação
+
+CRUD movimentação creditos
+
+Tabela com creditos de cada fornecedor
+
+Tabela valor em dinheiro de cada cliente
+
+Tabela com clientes:
+  Paginação 
+  Pesquisa
+  Ordenação
+  Esconder linhas \ Mudar linhas de posição
+  Salvar Configuração
+  Excluir Cliente do sistema
+  Adicionar Cliente
+  Adicionar Produto
+
+Tabela com estoque:
+  Paginação
+  Pesquisa
+  Ordenação
+  Esconder linhas \ Mudar linhas de posição
+  Salvar Configuração - utilizar local storage
+  Imprimir código de barras
+  Excluir produto do sistema - Pedir Confirmação
+  Ler um código de barras busca automaticamente o produto
+
+Tabela com produtos fora de estoque:
+  Paginação
+  Pesquisa
+  Ordenação
+  Salvar Configuração 
+  Esconder linhas \ Mudar linhas de posição
+  Ler um código de barras busca automaticamente um produto
+
+Tabela com registro de movimentação:
+  Paginação
+  Pesquisa
+  Ordenação
+  Salvar Configuração
+  Expandir linha para mostrar quais produtos estão em cada movimentação
+  Imprimir Recibo
+  Esconder linhas \ Mudar linhas de posição
+  Ler um codigo de barras busca todas as movimentações com o produto
+
+Login
+
+Permitir visualização apenas para usuários logados.
+  Front: Redirecionar para a página de Login
+  Back : Retornar erro - Não autorizado
+
+Tela de Vendas:
+  Adicionar Comprador
+  Ler o código de barras de um produto deve adicioná-lo automaticamente na lista de venda.
+  Input para adicionar o código dos produtos diretamente.
+  Produtos são vendas por padrão - Adicionar campo que o modifica para emprestimo.
+  Adicionar produto não cadastrado no sistema.
+  Imprimir recibo
+  Salvar carrinhos não finalizados no local storage
+  Ao finalizar a compra, informar se foi feito o pagamento
+
+Tela de entradas:
+  Devolução de um produto.
+  Devolução de emprestimo.
+  Imprimir Recibo
+
+Página Home:
+  Resumo Financeiro.
+  Atualizar apenas quando o usuário pedir.
+  Utilizar tabelas próprias
+
+Página Cliente:
+  Produtos comprados
+  Produtos Vendidos
+  Produtos emprestados pelo \ por
+  Produtos em estoque
+  Produtos devolvidos
+  Produtos doados
+  Valor total comprado
+  Valor total vendido
+  Valor pago
+  Total
+  Alterar Todos os campos anteriores baseado na data
+
+Página de Configurações:
+  Adicionar Cores
+  Adicionar Tamanho
+
+Página de movimentação financeira:
+  Movimentações financeiras
+  Adicionar Movimentação
+  Excluir Movimentção - Exigir confirmação.
+
+Gerar excel

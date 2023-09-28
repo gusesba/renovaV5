@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Topnav() {
   return (
@@ -12,12 +13,18 @@ export default function Topnav() {
     Recibos
     Excel 
     Insta*/}
-      <a href="/">
+      <Link href="/" passHref>
         <Image src="/logo.jpg" alt="Logo" width={180} height={60} />
-      </a>
-      <a href="/clientes">Clientes</a>
-      <a href="/estoque">Estoque</a>
-      <a href="/saidas">Saídas</a>
+      </Link>
+      <Link href="/clientes" passHref>
+        Clientes
+      </Link>
+      <Link href="/estooque" passHref>
+        Estoque
+      </Link>
+      <Link href="/saidas" passHref>
+        Saídas
+      </Link>
     </nav>
   );
 }
