@@ -10,3 +10,84 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Cliente {
+  id        Int      @id @default(autoincrement())
+  nome      String   @unique
+  telefone  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  movimentacoes_financeiras MovimentacaoFinanceira[]
+  produtos Produto[]
+}
+
+model Produto {
+  id Int @id @default(autoincrement())
+  preco Float
+  descricao String
+  data_entrada DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  cor_id Int
+  cor Cor @relation(fields: [cor_id], references: [id])
+  tamanho_id Int
+  tamanho Tamanho @relation(fields: [tamanho_id], references: [id])
+  tipo_id Int
+  tipo Tipo @relation(fields: [tipo_id], references: [id])
+  cliente_id Int
+  cliente Cliente @relation(fields: [cliente_id], references: [id])
+  movimentacoes_estoque MovimentacaoEstoque[]
+}
+
+model Cor {
+  id Int @id @default(autoincrement())
+  valor String
+  produtos Produto[]
+}	
+
+model Tamanho {
+  id Int @id @default(autoincrement())
+  valor String
+  produtos Produto[]
+}
+
+model Tipo {
+  id Int @id @default(autoincrement())
+  valor String
+  produtos Produto[]
+}
+
+model MovimentacaoFinanceira {
+  id Int @id @default(autoincrement())
+  valor Float
+  data DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  cliente_id Int
+  cliente Cliente @relation(fields: [cliente_id], references: [id])
+}
+
+model MovimentacaoEstoque {
+  id Int @id @default(autoincrement())
+  tipo TipoMovimentacao
+  valor Float
+  produto_id Int
+  produto Produto @relation(fields: [produto_id], references: [id])
+  grupo_movimentacao_estoque_id Int
+  grupo_movimentacao_estoque GrupoMovimentacaoEstoque @relation(fields: [grupo_movimentacao_estoque_id], references: [id])
+}
+
+enum TipoMovimentacao {
+  VENDA
+  EMPRESTIMO
+  RETORNO
+  DOACAO
+  DEVOLUCAO_VENDA
+  DEVOLUCAO_EMPRESTIMO
+}
+
+model GrupoMovimentacaoEstoque {
+  id Int @id @default(autoincrement())
+  movimentacoes_estoque MovimentacaoEstoque[]
+  data DateTime @default(now())
+}
