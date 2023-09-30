@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useQuery } from "react-query";
 import Tabela from "./Tabela";
 
 export default function TabelaClientes() {
@@ -8,13 +9,15 @@ export default function TabelaClientes() {
     { name: "Contato", id: "telefone" },
   ];
 
-  const [dados, setDados] = useState([]);
+  const { data, isLoading } = useQuery("clientes", () => {
+    return fetch("http://localhost:3000/api/clientes").then((resposta) =>
+      resposta.json()
+    );
+  });
 
-  useEffect(() => {
-    fetch("http://localhost:3000/api/clientes")
-      .then((resposta) => resposta.json())
-      .then((dados) => setDados(dados));
-  }, []);
+  useEffect(() => {}, []);
 
-  return <Tabela headers={headers} dados={dados} />;
+  if (isLoading) return <p>Carregando...</p>;
+
+  return <Tabela headers={headers} dados={data} />;
 }

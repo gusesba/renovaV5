@@ -1,7 +1,10 @@
 "use client";
 import Topnav from "@/components/Topnav";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { QueryClient, QueryClientProvider } from "react-query";
 import "./globals.css";
+
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -9,11 +12,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt">
-      <body>
-        <Topnav />
-        <main>{children}</main>
-      </body>
-    </html>
+    <QueryClientProvider client={queryClient}>
+      <html lang="pt">
+        <body>
+          <Topnav />
+          <main>{children}</main>
+        </body>
+      </html>
+    </QueryClientProvider>
   );
 }
