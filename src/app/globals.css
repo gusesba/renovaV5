@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   padding: 0 2rem;
-  height: 8vh;
+  height: 80px;
   background-color: #eee;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -49,4 +49,21 @@
 
 .tabela-holder > table {
   border-radius: 15px;
+}
+
+/* Alert */
+
+.my-alert {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.my-alert > div {
+  margin-top: 50px;
+  height: 400px;
+  width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
 }

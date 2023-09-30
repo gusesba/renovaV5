@@ -3,12 +3,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
   const clientes = await getAllClientes();
-
-  if ("error" in clientes)
-    return NextResponse.json(
-      { error: "Erro ao buscar clientes" },
-      { status: 500 }
-    );
+  if ("error" in clientes) {
+    return NextResponse.json({ error: clientes.error }, { status: 500 });
+  }
 
   return NextResponse.json(clientes, { status: 200 });
 }
@@ -21,10 +18,7 @@ export async function POST(req: NextRequest) {
 
   const cliente = await createCliente(nome, telefone);
   if ("error" in cliente) {
-    return NextResponse.json(
-      { error: "Erro ao buscar clientes" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: cliente.error }, { status: 500 });
   }
 
   return NextResponse.json(cliente, { status: 201 });

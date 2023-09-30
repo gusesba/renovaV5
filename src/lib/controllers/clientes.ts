@@ -3,6 +3,7 @@ import { prisma } from "@/lib/database/db";
 export async function getAllClientes() {
   try {
     const clientes = await prisma.cliente.findMany();
+
     return clientes;
   } catch (error) {
     return { error: "Erro ao encontrar clientes" };
